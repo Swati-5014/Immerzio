@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry Page</title>
+    <link rel="stylesheet" href="style_index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="form">
+                <h2>Enter Your Details</h2>
+                <form id="entryForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="role">Reason for Visit:</label>
+                    <select id="role" name="role" required>
+                        <option value="ngo">NGO Representative</option>
+                        <option value="student">Student</option>
+                        <option value="volunteer">Volunteer</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel">
+                <button class="carousel-button left-button"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="slide">
+                            <img src="image1.jpg" alt="Slide 1">
+                        </div>
+                        <div class="slide">
+                            <img src="image2.jpg" alt="Slide 2">
+                        </div>
+                        <div class="slide">
+                            <img src="image3.jpg" alt="Slide 3">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button right-button"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script_index.js"></script>
+</body>
+</html>

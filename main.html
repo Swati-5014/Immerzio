@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donation Platform</title>
+    <link rel="stylesheet" href="style_main.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <span>Feeding Hearts</span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Donate</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="user-profile" onclick="toggleDropdown()">
+                <span>Ashlynn</span>
+                <img src="profile.png" alt="Profile">
+                <div class="dropdown" id="dropdown">
+                    <a href="#">Donation</a>
+                    <a href="#">Volunteer</a>
+                    <a href="#">Address</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="slider">
+            <div class="quote">"Hunger knows no boundaries. Let’s change that together."</div>
+            <div class="slides">
+                <img class="slide" src="slider1.jpg" alt="Slide 1">
+                <img class="slide" src="slider2.jpg" alt="Slide 2">
+                <img class="slide" src="slider3.jpg" alt="Slide 3">
+                <img class="slide" src="slider4.jpg" alt="Slide 4">
+            </div>
+            <button class="donate-button">Donate Now</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <h1>Welcome to the Food Donation Platform</h1>
+        <p>Connect leftover food from events to NGOs that distribute it to those in need.</p>
+        <div class="buttons">
+            <a href="#" class="button primary-button">Learn More</a>
+            <a href="#" class="button secondary-button">Get Involved</a>
+        </div>
+        <div class="images">
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+        </div>
+    </section>
+
+    <section class="cases-section">
+        <h2>Success Stories</h2>
+        <div class="carousel">
+            <button class="carousel-button left-button">&lt;</button>
+            <div class="carousel-track-container">
+                <div class="carousel-track">
+                    <div class="carousel-card">
+                        <img src="slider2.jpg" alt="Story 1">
+                        <div class="card-content">
+                            <h3>Story 1</h3>
+                            <p>Details about the success story.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <img src="slider1.jpg" alt="Story 2">
+                        <div class="card-content">
+                            <h3>Story 2</h3>
+                            <p>Details about the success story.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-card">
+                        <img src="slider3.jpg" alt="Story 3">
+                        <div class="card-content">
+                            <h3>Story 3</h3>
+                            <p>Details about the success story.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-button right-button">&gt;</button>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="stat">
+            <div class="icon">🍲</div>
+            <div class="number" id="projects">0</div>
+            <div>Projects</div>
+        </div>
+        <div class="stat">
+            <div class="icon">🙌</div>
+            <div class="number" id="volunteers">0</div>
+            <div>Volunteers</div>
+        </div>
+        <div class="stat">
+            <div class="icon">💰</div>
+            <div class="number" id="raised">0</div>
+            <div>Funds Raised</div>
+        </div>
+        <div class="stat">
+            <div class="icon">❤️</div>
+            <div class="number" id="donors">0</div>
+            <div>Donors</div>
+        </div>
+    </section>
+
+    <section class="subscribe-section">
+        <h3>Subscribe to our newsletter</h3>
+        <input type="email" placeholder="Your email">
+        <button>Subscribe</button>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="column">
+                <div class="logo">Food Donation</div>
+                <p>&copy; 2024 Food Donation Platform. All rights reserved.</p>
+            </div>
+            <div class="column">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <span>Address: 123 Charity Street</span>
+                    <span>Email: <a href="mailto:info@fooddonation.com">info@fooddonation.com</a></span>
+                    <span>Phone: (123) 456-7890</span>
+                </div>
+            </div>
+            <div class="column">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a>
+                <a href="#">Projects</a>
+                <a href="#">Volunteer</a>
+                <a href="#">Donate</a>
+            </div>
+            <div class="column">
+                <h3>Get Involved</h3>
+                <a href="#" class="btn">Donate Now</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script_main.js"></script>
+</body>
+</html>

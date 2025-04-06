@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feeding Hearts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #27374D;
+            padding: 10px 20px;
+            color: #DDE6ED;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #DDE6ED;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #9DB2BF;
+        }
+        .user-profile {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .user-profile img {
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #526D82;
+            color: #DDE6ED;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            width: 200px;
+        }
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #DDE6ED;
+            transition: background-color 0.3s;
+        }
+        .dropdown a:hover {
+            background-color: #9DB2BF;
+        }
+        .fade {
+            animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }}
+
+            .slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.slider {
+    position: relative;
+    max-width: 100%; /* Adjust to fit your design */
+    margin: auto; /* Center the slider and add vertical spacing */
+    overflow: hidden;
+    border-radius: 10px; /* Optional: add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for a more polished look */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 500px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+}
+
+.quote {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #DDE6ED;
+    background-color: rgba(39, 55, 77, 0.8);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+}
+
+.donate-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #9DB2BF;
+    color: #27374D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    z-index: 1;
+}
+
+.donate-button:hover {
+    background-color: #526D82;
+}
+
+.section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h1 {
+    color: #27374D;
+    font-size: 2.5em;
+}
+
+.section h2 {
+    color: #526D82;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.section p {
+    color: #666666;
+    font-size: 1em;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 5px;
+    font-size: 1em;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.primary-button {
+    background-color: #27374D;
+}
+
+.primary-button:hover {
+    background-color: #526D82;
+}
+
+.secondary-button {
+    background-color: #526D82;
+}
+
+.secondary-button:hover {
+    background-color: #27374D;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.images img {
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.cases-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.carousel-track-container {
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in;
+}
+
+.carousel-card {
+    min-width: 300px;
+    margin: 0 15px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-card img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.progress-bar {
+    background-color: #F1872D;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.carousel-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: #F1872D;
+}
+
+.left-button {
+    left: 0;
+}
+
+.right-button {
+    right: 0;
+}
+
+        
+
+.container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 20vh;
+            background-color: rgba(39, 55, 77, 0.5);
+            color: white;
+        }
+        .stat {
+            text-align: center;
+        }
+        .icon {
+            font-size: 50px;
+            color: #526D82;
+        }
+        .number {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .label {
+            font-size: 20px;
+        }
+
+
+
+
+        /* .header {
+            background-color: #526D82;
+            color: #fff;
+            padding: 20px 0;
+            position: relative;
+        }
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        } */
+        .hero {
+            background-image: url('https://images.pexels.com/photos/14456845/pexels-photo-14456845.jpeg?auto=compress&cs=tinysrgb&w=600'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 24px;
+            margin: 10px 0 20px;
+        }
+        .hero .btn {
+            background-color: #526D82;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .subscribe-section {
+            background-color: #27374D;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .subscribe-section input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .subscribe-section button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #526D82;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        .footer {
+            background-color: #27374D;
+            color: #fff;
+            padding: 20px 0;
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer .column {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+        .footer .column h3 {
+            color: #9DB2BF;
+        }
+        .footer .column a {
+            color: #9DB2BF;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+        .footer .column a:hover {
+            text-decoration: underline;
+        }
+        .footer .contact-info {
+            font-size: 16px;
+            color: #DDE6ED;
+        }
+        .footer .contact-info span {
+            display: block;
+            margin: 5px 0;
+        }
+        .footer .contact-info a {
+            color: #DDE6ED;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <span>Feeding Hearts</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Donate</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="user-profile" onclick="toggleDropdown()">
+            <span>Ashlynn</span>
+            <img src="profile.png" alt="Profile">
+            <div class="dropdown" id="dropdown">
+                <a href="#">Donation</a>
+                <a href="#">Volunteer</a>
+                <a href="#">Address</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slider -->
+    <div class="slider">
+        <div class="quote">"Hunger knows no boundaries. Let’s change that together."</div>
+        <div class="slides">
+            <img class="slide" src="slider1.jpg" alt="Slide 1">
+            <img class="slide" src="slider2.jpg" alt="Slide 2">
+            <img class="slide" src="slider3.jpg" alt="Slide 3">
+            <img class="slide" src="slider4.jpg" alt="Slide 4">
+        </div>
+        <button class="donate-button">Donate Now</button>
+    </div>
+
+    <div class="section">
+        <h1>Save Children From Hunger</h1>
+        <h2>Become a Part of the World</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam quaerat atque, dolore. Amido ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <div class="buttons">
+            <a href="#" class="button primary-button">Donate Now</a>
+            <a href="about-us.html" class="button secondary-button">Read More</a>
+        </div>
+        <div class="images">
+            <img src="image1.jpg" alt="Child in need">
+            <img src="image2.jpg" alt="Happy children">
+            <img src="image3.jpg" alt="Volunteer helping">
+        </div>
+    </div>
+    
+
+    <div class="cases-section">
+        <h2>OUR CASES</h2>
+        <div class="carousel">
+            <div class="carousel-track-container">
+                <button class="carousel-button left-button">‹</button>
+                <ul class="carousel-track">
+                    <li class="carousel-card">
+                        <img src="image1.jpg" alt="Case Image 1">
+                        <div class="card-content">
+                            <div class="progress-bar" style="width: 50%;">50%</div>
+                            <h3>SPONSOR A CHILD ONE</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                            <p><strong>RAISED: $10,000.00 &nbsp; GOAL: $2,000.00</strong></p>
+                        </div>
+                    </li>
+                    <li class="carousel-card">
+                        <img src="image2.jpg" alt="Case Image 2">
+                        <div class="card-content">
+                            <div class="progress-bar" style="width: 80%;">80%</div>
+                            <h3>SPONSOR A CHILD TWO</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                            <p><strong>RAISED: $1,200.00 &nbsp; GOAL: $150.00</strong></p>
+                        </div>
+                    </li>
+                    <li class="carousel-card">
+                        <img src="image3.jpg" alt="Case Image 3">
+                        <div class="card-content">
+                            <div class="progress-bar" style="width: 50%;">50%</div>
+                            <h3>SPONSOR A CHILD THREE</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                            <p><strong>RAISED: $20.00 &nbsp; GOAL: $40.00</strong></p>
+                        </div>
+                    </li>
+                    <!-- Add more cards here -->
+                </ul>
+                <button class="carousel-button right-button">›</button>
+            </div>
+        </div>
+    </div>
+       
+
+
+    <div class="container">
+        <div class="stat">
+            <div class="icon">👍</div>
+            <div class="number" id="projects">0</div>
+            <div class="label">PROJECTS COMPLETED</div>
+        </div>
+        <div class="stat">
+            <div class="icon">❤️</div>
+            <div class="number" id="volunteers">0</div>
+            <div class="label">OUR VOLUNTEERS</div>
+        </div>
+        <div class="stat">
+            <div class="icon">💰</div>
+            <div class="number" id="raised">0</div>
+            <div class="label">RAISED DOLLARS</div>
+        </div>
+        <div class="stat">
+            <div class="icon">🤲</div>
+            <div class="number" id="donors">0</div>
+            <div class="label">DONORS</div>
+        </div>
+    </div>
+
+
+    <!-- <header class="header">
+        <div class="container">
+            <div class="logo">CHARITY PRO</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Causes</a>
+                <a href="#">Events</a>
+                <a href="#">Pages</a>
+                <a href="#">Shop</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header> -->
+    <section class="hero">
+        <div class="container">
+            <h1>Become A Volunteer</h1>
+            <p>Join your hand with us for a better life and beautiful future.</p>
+            <a href="#" class="btn">Join Us Now</a>
+        </div>
+    </section>
+    <section class="subscribe-section">
+        <div class="container">
+            <p>Subscribe now and receive weekly newsletter with new events, interesting charity activities</p>
+            <input type="email" placeholder="Enter your mail address">
+            <button>Subscribe</button>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="column">
+                <div class="logo">CHARITY PRO</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="contact-info">
+                    <span>📞 1800 - 654 - 8745</span>
+                    <span>📧 <a href="mailto:contact@charitypro.com">contact@charitypro.com</a></span>
+                </div>
+            </div>
+            <div class="column">
+                <h3>Useful Links</h3>
+                <a href="#">About Us</a>
+                <a href="#">Volunteers</a>
+                <a href="#">Our Services</a>
+                <a href="#">Causes</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="column">
+                <h3>We are on Twitter</h3>
+                
+            </div>
+            <div class="column">
+                <h3>Donations</h3>
+                <a href="#">How to Donate</a>
+                <a href="#">Donation List</a>
+                <a href="#">Recent Causes</a>
+                <a href="#">FAQ</a>
+                <a href="#" class="btn">Donate Now</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.classList.toggle('fade');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.user-profile, .user-profile *')) {
+                const dropdown = document.getElementById('dropdown');
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                }
+            }
+        }
+
+        let currentIndex = 0;
+
+        function showNextSlide() {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(showNextSlide, 4000);
+
+        // Add any interactive functionality here if needed
+document.addEventListener("DOMContentLoaded", function() {
+    // Example: Add a click event listener to the Donate Now button
+    document.querySelector('.primary-button').addEventListener('click', function(event) {
+        event.preventDefault();
+        alert("Thank you for your interest in donating!");
+    });
+});
+
+
+
+// const track = document.querySelector('.carousel-track');
+// const leftButton = document.querySelector('.left-button');
+// const rightButton = document.querySelector('.right-button');
+// const cards = Array.from(track.children);
+
+// const cardWidth = cards[0].getBoundingClientRect().width;
+
+// cards.forEach((card, index) => {
+//     card.style.left = cardWidth * index + 'px';
+// });
+
+// let currentIndex = 0;
+
+// rightButton.addEventListener('click', () => {
+//     if (currentIndex < cards.length - 1) {
+//         currentIndex++;
+//         track.style.transform = 'translateX(-' + cardWidth * currentIndex + 'px)';
+//     }
+// });
+
+// leftButton.addEventListener('click', () => {
+//     if (currentIndex > 0) {
+//         currentIndex--;
+//         track.style.transform = 'translateX(-' + cardWidth * currentIndex + 'px)';
+//     }
+// });
+
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//             const projectsElement = document.getElementById('projects');
+//             const volunteersElement = document.getElementById('volunteers');
+//             const raisedElement = document.getElementById('raised');
+//             const donorsElement = document.getElementById('donors');
+
+//             const targetProjects = 254;
+//             const targetVolunteers = 254;
+//             const targetRaised = 254;
+//             const targetDonors = 254;
+
+//             let countProjects = 0;
+//             let countVolunteers = 0;
+//             let countRaised = 0;
+//             let countDonors = 0;
+
+//             const incrementTime = 10;
+
+//             const increment = (element, count, target) => {
+//                 if (count < target) {
+//                     element.innerText = count + 1;
+//                     setTimeout(() => increment(element, count + 1, target), incrementTime);
+//                 } else {
+//                     element.innerText = target;
+//                 }
+//             };
+
+//             increment(projectsElement, countProjects, targetProjects);
+//             increment(volunteersElement, countVolunteers, targetVolunteers);
+//             increment(raisedElement, countRaised, targetRaised);
+//             increment(donorsElement, countDonors, targetDonors);
+//         });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+            let counters = document.querySelectorAll('.counter');
+            let speed = 200; // The lower the slower
+
+            counters.forEach(counter => {
+                let updateCount = () => {
+                    let target = +counter.getAttribute('data-target');
+                    let count = +counter.innerText;
+
+                    let increment = target / speed;
+
+                    if(count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+        });
+    </script>
+    </script>
+
+</body>
+</html>

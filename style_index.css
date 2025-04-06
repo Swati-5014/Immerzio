@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EDEDED; /* Changed background color */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #F7F7F7; /* Added background color for the container */
+    border-radius: 10px; /* Added border-radius for better aesthetics */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for the container */
+}
+
+.form-container {
+    flex: 1;
+    max-width: 40%;
+    margin-right: 20px; /* Added space between form and carousel */
+}
+
+.form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form h2 {
+    margin-bottom: 20px;
+    color: #27374D;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #27374D;
+}
+
+.form input, .form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #27374D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #526D82;
+}
+
+.carousel-container {
+    flex: 1;
+    max-width: 50%;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    display: flex;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.left-button {
+    left: 10px;
+}
+
+.right-button {
+    right: 10px;
+}
+
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in;
+}
+
+.slide img {
+    width: 50%; /* Reduced size of the image */
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
